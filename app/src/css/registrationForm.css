@@ -1,0 +1,243 @@
+.LoginComponent {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Container {
+    margin: 20px;
+    padding: 40px;
+    background: #FFFFFF;
+
+    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+    border-radius: 12px;
+
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.H3 {
+font-family: Poppins;
+font-style: bold;
+font-weight: 600;
+font-size: 28px;
+line-height: 42px;
+text-align: center;
+
+/* Grey/800 */
+
+color: #121625;
+}
+
+.Row1 {
+    display: -webkit-flex;
+    display: flex;
+    margin-top: 40px;
+}
+
+.Row2 {
+    display: -webkit-flex;
+    display: flex;
+    margin: 20px 0 30px 0;
+}
+
+.FieldGroup {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+    text-align: left;
+
+  
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #626266;
+}
+
+
+.Field {
+    margin-top: 10px;
+
+    padding-left: 13px;
+    width: 232px;
+    height: 46px;
+
+    background: #F6F6F6;
+    border-radius: 8px;
+    border: none;
+
+    
+}
+
+.CheckboxContainer {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin: 20px 10px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: left;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+
+
+    color: #000;
+}
+
+
+
+.CheckboxContainer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+.Checkbox {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    background: #F6F6F6;
+    border-radius: 4px;
+    border: none;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+}
+
+.CheckboxContainer:hover input ~ .Checkbox{
+    background-color: #ccc;
+  }
+
+.CheckboxContainer input:checked ~ .Checkbox {
+background-color: #4E8AF4;
+}
+
+.Checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+
+.CheckboxContainer input:checked ~ .Checkbox:after {
+    display: block;
+}
+
+.CheckboxContainer .Checkbox:after {
+    left: 10px;
+    top: 7px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-radius: 6px;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .CreateAccountButton {
+    width: 96%;
+    margin: 10px;
+    margin-bottom: 30px;
+    
+
+    padding: 10px 20px;
+    
+    /* Blue / 500 */
+    
+    background: #4E8AF4;
+    
+    border-radius: 8px;
+    border: none;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: #FFFFFF
+    
+    }
+
+form { 
+    font-family: Poppins;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 21px;
+text-align: center;
+}
+
+@media (max-width: 550px) {
+    .Container {
+        margin: 10px 20px;
+        padding: 30px 10px;
+    }
+    .Row1, .Row2 {
+      margin: 0px; 
+      flex-direction: column;
+    }  
+
+    .Field {
+        margin: 0px 0px;
+        width: 100%;
+    }
+
+    .FieldGroup {
+        margin: 10px 15px;
+    }
+
+    .Button {
+        width: 90%;
+       
+    }
+
+    .CheckboxContainer {
+        margin: 20px 15px;
+      
+    }
+
+}
+
+@media (max-width: 360px) {
+    .CheckboxContainer {
+        font-size: 12px;
+    }
+
+    .Container {
+        margin: 0px 0px 20px 0px;
+
+    padding: 0px;
+    background: none;
+
+    box-shadow: none;
+    border-radius: 0px;
+    }
+}
+
+
+
+
+
+
+
+

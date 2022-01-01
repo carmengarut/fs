@@ -1,0 +1,113 @@
+.Header {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background: #ffffff;
+    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+
+    padding: 20px 0px;
+    width: 60px;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+}
+
+.HeaderLogo {
+    cursor:pointer; 
+}
+
+.Section {
+    margin-top: 30px;
+    cursor:pointer;
+}
+
+.ToggleSectionTitle {
+    display: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 16px;
+}
+
+.MenuButton {
+    display: none;
+}
+
+.ProfileSection{
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    cursor:pointer;
+}
+
+@media (max-width: 800px) {
+    .Header {
+        overflow: hidden;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        height: 60px;
+        padding: 0 15px;
+    }
+
+
+    .ToggleSection{
+        display: none;
+    }
+
+    .MenuButton { 
+        display: inline-block;
+        margin-right: 10px;
+        cursor:pointer;
+    }
+
+    .ToggleSection {
+        background: #fff !important;
+        box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
+        border-radius: 12px;
+        position: fixed;
+        top: 45px;
+        right: 10px;
+
+        padding: 0 10px;
+    }
+
+    .Block:hover .ToggleSection{
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+      }
+
+    .ToggleSectionTitle {
+        display: inline-block;
+    }
+
+    .Section {
+        padding: 10px;
+        margin: 0;
+        border-bottom: 1px solid rgba(18, 17, 39, 0.12);
+    }
+
+    .ProfileSection {
+        position: static;
+        padding: 10px;
+    }
+
+    .SectionIcon { 
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+    }
+    .ProfileIcon { 
+        height: 20px;
+        width: 20px;
+        margin-right: 10px;
+    }
+
+    
+
+}
+

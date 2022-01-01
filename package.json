@@ -1,0 +1,41 @@
+{
+  "name": "etrust",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "api",
+    "app"
+  ],
+  "engines": {
+    "npm": "8.3.0",
+    "node": "16.10.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "build": "SKIP_PREFLIGHT_CHECK=true npm run build --workspace=app",
+    "lint": "eslint ./api ./app",
+    "start": "npm run start --workspace=api",
+    "dev:app": "SKIP_PREFLIGHT_CHECK=true npm run start --workspace=app",
+    "dev:api": "npm run build && npm run dev --workspace=api"
+  },
+  "eslintConfig": {
+    "ignorePatterns": "build",
+    "extends": "./node_modules/standard/eslintrc.json",
+    "env": {
+      "cypress/globals": true,
+      "jest": true
+    },
+    "plugins": [
+      "cypress"
+    ],
+    "parser": "babel-eslint"
+  },
+  "devDependencies": {
+    "eslint-plugin-cypress": "2.12.1",
+    "standard": "16.0.4"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

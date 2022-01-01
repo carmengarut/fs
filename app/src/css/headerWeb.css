@@ -1,0 +1,155 @@
+@import url('./fonts.css');
+
+.Navbar {
+    background: #FFFFFF;
+} 
+
+.BrandName {
+    /* Heading / 4 */
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 140%;
+
+    /* or 34px */
+
+    color: #000000;
+    
+}
+
+.HeaderRightBlock {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.FlagBlock { 
+  margin-right: 30px;
+}
+
+.FlagDropdown{
+    display: none;
+    position:absolute;
+    top: 50px;
+    right: 20%;
+    width: 190px;
+  
+    
+    box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
+    border-radius: 12px;
+    list-style-type: none;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 140%;
+    background: #FFFFFF;
+    
+
+}
+
+li {
+    padding: 20px 45px;
+    display: inline-block
+}
+
+.Flag {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.LastLanguage {
+    border-top: 1px solid rgba(18, 17, 39, 0.12);
+}
+.FlagBlock:hover .FlagDropdown{
+    display: block !important;
+    cursor:pointer;
+  }
+
+.ActionButtons{
+    display: -webkit-flex;
+    display: flex;
+
+}
+
+.SignUpButton {
+    height: 35px;
+
+    padding: 6px 18px;
+    border: none;
+    text-align: center;
+
+
+    background: #4E8AF4;
+    border-radius: 4.32365px;
+    
+    /* Inside Auto Layout */
+    
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+
+
+    color: #FFFFFF;
+    
+}
+
+.SignInButton {
+
+    height: 35px;
+
+    margin: 0px 12px;
+    padding: 6px 18px;
+    text-align: center;
+    
+    
+    /* Grayscale 900 Opacity / 12% */
+    background: #FFFFFF;
+    border: 0.720608px solid rgba(18, 17, 39, 0.12);
+    border-radius: 4.32365px;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    
+
+    color: #121127;
+}
+
+@media (max-width: 1000px) {
+    .FlagDropdown{
+        right: 14%;
+    }
+}
+
+@media (max-width: 991px) {
+    .ActionButtons {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 8%;
+
+        background: #FFFFFF;
+        box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
+        border-radius: 12px;
+    }
+
+    .SignUpButton {
+        margin: 20px 20px 20px 20px;
+    }
+
+    .SignInButton {
+        margin: 0px 20px 20px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ActionButtons{
+        right: 3%;
+    }
+}

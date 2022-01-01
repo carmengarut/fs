@@ -1,0 +1,138 @@
+{
+    "header_web": {
+        "brand_name": "eTrust",
+        "sign_up": "Regístrate",
+        "sign_in": "Iniciar Sesión",
+        "es": "Español",
+        "en": "English"
+    },
+    "landing_page": {
+        "h1": "Construye acuerdos fiables",
+        "h2": "Asegura la fiabilidad de la otra parte y consigue que tus contratos se cumplan.",
+        "button_1": "Saber Más",
+        "button_2": "Empieza Ahora",
+        "box_1_title": "Entiende la fiabilidad de la otra parte",
+        "box_1_content":"Busca el perfil de otras personas para comprobar su porcentaje de fiabilidad. Lo calculamos en base al porcentaje de acuerdos cumplidos.",
+        "box_2_title": "Aseguramos la inmutabilidad a través de la tecnología blockchain",
+        "box_2_content": "Una vez firmado por ambas partes, el acuerdo es encriptado y almacenado en el blockchain, asegurando su inmutabilidad.",
+        "box_3_title": "Haz que tus contratos se cumplan",
+        "box_3_content": "Evaluarás el cumplimiento del contrato por la otra parte cuando este haya terminado. Tu feedback será público, asegurando buena conducta."
+    },
+    "footer": {
+        "contact_details": "Contacto +34 617 99 85 94"
+    },
+    "sign_up": {
+        "title": "Vamos a empezar",
+        "name": "Nombre",
+        "surname": "Apellidos",
+        "email": "Email",
+        "password": "Contraseña",
+        "terms_and_conditions": "Acepto los términos y condiciones",
+        "create_account": "Crear Cuenta",
+        "have_account": "¿Ya tienes una cuenta? ",
+        "sign_in": "Iniciar sesión"
+
+    },
+    "sign_in": {
+        "title": "Inicia sesión en tu cuenta",
+        "email": "Email",
+        "password": "Contraseña",
+        "login": "Iniciar Sesión",
+        "dont_have_account": "¿No tienes cuenta? ",
+        "sign_up": "Regístrate"
+    },
+    "agreements_page": {
+        "agreements": "Contratos",
+        "new_deal": "Nuevo Contrato",
+        "title": "Título",
+        "user": "Usuario",
+        "creation_date": "Fecha de Creación",
+        "signed": "Firmado",
+        "status": "Estado",
+        "no_deals": "No hay contratos añadidos"
+    },
+    "deal": {
+        "signed": "Firmado",
+        "not_signed": "No Firmado"
+    },
+    "header": {
+        "agreements": "Contratos",
+        "users": "Usuarios",
+        "profile": "Perfil"   
+    },
+    "users_page": {
+        "users": "Usuarios",
+        "search": "Buscar usuario...",
+        "trust_rate": "% confianza"
+    },
+    "profile_page": {
+        "profile": "Perfil",
+        "edit_your_account_info": "Edita la información de tu cuenta:",
+        "name": "Nombre",
+        "surname": "Apellidos",
+        "email": "Email",
+        "logout": "Cerrar Sesión",
+        "save_changes": "Guardar Cambios"  
+    },
+    "create_contract_page": {
+        "contracts": "Contratos",
+        "title": "Crea un nuevo contrato:",
+        "contract_title": "Título del contrato",
+        "contract_title_placeholder": "Introduce el título del contrato",
+        "content": "Contenido del contrato (Describe los detalles y cláusulas del contrato)",
+        "content_placeholder": "Introduce el contenido del contrato",
+        "email": "Email de la persona a la que quieres enviar el contrato",
+        "email_placeholder": "Introduce el email de la persona a la que quieres enviar el contrato",
+        "save": "Crear Contrato",
+        "dont_have_account": "El usuario no tiene cuenta de eTrust",
+        "want_to_send_invitation": " no tiene cuenta de eTrust. ¿Quieres enviarle una invitación?",
+        "invite_user": "Invitar Usuario",
+        "cancel": "Cancelar"
+    },
+    "deal_details": {
+        "contract_details": "Detalles del Contrato - ",
+        "contract_status": "Estado del contrato: ",
+        "contract_members": "Miembros del contrato:",
+        "saved": "¡Guardado!",
+        "contract_successfully_edited_1": "El contrato ",
+        "contract_successfully_edited_2": " se ha editado correctamente. El otro miembro del contrato ha sido notificado del cambio.",
+        "go_to_contracts": "Ir a contratos",
+        "continue_editing": "Continuar editando"
+    },
+    "deal_details_member_card": {
+        "creator": "Creador",
+        "signed": "Firmado",
+        "not_signed": "No Firmado",
+        "invitation_pending": "(Invitation pending)"
+    },
+    "deal_details_form": {
+        "contract_details": "Detalles del contrato :",
+        "title": "Título del contrato",
+        "title_placeholder": "Introduce el título del contrato",
+        "content": "Contenido del contrato (Describe los detalles y cláusulas del contrato)",
+        "content_placeholder": "Introduce el contenido del contrato",
+        "creation_date": "Fecha de creación: ",
+        "propose_changes": "Proponer Cambios",
+        "sign_now": "Firmar Ahora"
+    },
+    "ratings": {
+        "contract_ratings": "Evaluaciones del contrato: ",
+        "submit_rating": "Evaluar contrato",
+        "no_ratings": "No hay evaluaciones añadidas"
+    },
+    "rating_form": {
+        "contracts": "Contratos",
+        "rate_contract": "Evalua el cumplimiento del contrato por la otra parte:",
+        "yes": "Sí",
+        "no": "No",
+        "did_person_fulfill_1": "¿Cumplió ",
+        "did_person_fulfill_2": " el contrato?",
+        "description": "Comentarios",
+        "description_placeholder": "Introduce tus comentarios",
+        "save": "Añadir evaluación",
+        "rating_added": "¡Evaluación añadida!",
+        "successfully_added": "Tu evaluación ha sido añadida correctamente.",
+        "accept": "Aceptar"
+    }
+    
+}

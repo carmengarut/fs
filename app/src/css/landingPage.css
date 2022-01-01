@@ -1,0 +1,311 @@
+@import url('./fonts.css');
+
+.LandingPageContainer {
+    padding: 0 60px;
+}
+
+.HeadingBlock {
+    display: -webkit-flex;
+    display: flex;
+    margin-bottom: 40px;
+    justify-content: center;
+}
+
+
+
+.flex-item-left {
+    margin-top: 50px;
+}
+
+.flex-item-right {
+    display: inline-block;
+}
+
+.H1 {
+  
+width: 100%;
+min-width: 450px;
+/* position: absolute;
+top: 165px; */
+
+font-family: Poppins;
+font-style: normal;
+font-weight: bold;
+font-size: 50px;
+line-height: 140%;
+/* or 70px */
+
+
+color: #000000;
+}
+
+.H2 {
+
+    width: 100%;
+    
+    /* Body/xl */
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 180%;
+    /* or 36px */
+    
+    
+    color: #000000;
+}
+
+
+
+.ButtonLeft {
+    /* Auto Layout */
+    width: 40%;
+    height: 45px;
+
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+    
+
+
+    
+    /* Grayscale 900 Opacity / 12% */
+    background: #FFFFFF;
+    border: 1px solid rgba(18, 17, 39, 0.12);
+    border-radius: 8px;
+    margin-top: 10px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    text-align: center;
+
+    /* Grayscale / 900 */
+
+    color: #121127;
+
+}
+
+.ButtonRight {
+
+    justify-content: center;
+    align-items: center;
+    display: inline-block;
+
+    width: 40%;
+    height: 45px;
+
+    /* Blue / 500 */
+
+    background: #4E8AF4;
+    border-radius: 8px;
+    border: none;
+    margin-left: 30px;
+    margin-top: 10px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    text-align: center;
+
+    /* Black & White/White */
+
+    color: #FFFFFF;
+
+}
+
+@media (max-width: 1000px) {
+    .HeadingBlock {
+      flex-direction: column;
+      align-items: center;
+      justify-content: none;
+    }
+    .flex-item-right, .flex-item-left {
+        flex: 100%;
+        text-align: center;
+    }
+
+    
+}
+
+@media (max-width: 415px) {
+    .LandingPageContainer { 
+        padding: 20px 10px;    
+    }
+
+    .flex-item-right {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    .flex-item-left {
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .H1{
+        display: flex;
+        width: 100%;
+        min-width: 0px;
+        font-size: 40px;
+    }
+
+    .H2{
+        display: flex;
+        width: 100%;
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 285px) {
+    .ButtonLeft, .ButtonRight {
+        width: 45%;
+    }
+
+    .ButtonRight {
+        margin-left: 12px;
+    }
+     
+}
+
+.BoxesBlock {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: center;
+}
+
+
+.Box {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 56px 24px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+
+    width: 30%;
+    
+    /* Black & White/White */
+    
+    background: #FFFFFF;
+    /* Drop Shadow/High */
+    
+    box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
+    border-radius: 12px;
+  
+}
+    
+
+.BoxTitle {
+
+    /* Heading / 6 */
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+
+
+    color: #121127;
+
+    margin: 24px 0px;
+
+}
+
+.BoxText {
+    /* Body / sm */
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 180%;
+    /* or 25px */
+
+    /* Grayscale 900 Opacity/56% */
+
+    color: rgba(18, 17, 39, 0.56);
+ 
+}
+
+@media (max-width: 1000px) {
+    .BoxesBlock {
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .Box {
+        width: 45%;
+    }
+     
+}
+
+@media (max-width: 800px) {
+    .Box {
+        margin-right: 0px;
+        width: 100%;
+    }
+     
+}
+
+footer {
+    border-top: 1px solid rgba(18, 17, 39, 0.12);
+    padding: 40px 20px;
+    margin-top: 40px;
+    color: rgba(18, 17, 39, 0.56);
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 180%;
+}
+
+.FooterBlock{
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+}
+
+@media (max-width: 1000px) {
+    footer {
+        padding: 30px 10px;
+        margin-top: 20px;
+    }
+    .FooterBlock {
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+     
+}
+
+@media (max-width: 290px) {
+    .FooterBlock {
+      
+      justify-content: center;
+    }  
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,132 @@
+.DDR-container {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    margin-top: 30px;
+} 
+
+.DDR-ratings-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 100%;
+}
+
+.DDR-rating-card {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 100%;
+
+    padding: 20px;
+    margin: 20px 20px 0 0px;
+
+    font-weight: 500;
+ 
+    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+    border-radius: 8px;
+    
+    background: #FFFFFF;
+    
+}
+
+.DDR-rating-card-empty {
+    display: -webkit-flex;
+    display: flex;
+
+
+    justify-content: flex-start;
+
+    width: 50%;
+
+    padding: 20px;
+    margin: 20px 20px 0 0px;
+
+    font-weight: 500;
+ 
+    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+    border-radius: 8px;
+    
+    background: #FFFFFF;
+    color: #626266;
+    
+}
+
+.DDR-rating-header {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.DDR-name-container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+
+}
+
+.DDR-name {
+    margin: 0 10px;
+}
+
+.DDR-thumbs-down {
+    color: #FF6B93;
+}
+
+.DDR-thumbs-up {
+    color: #2CC5BD;
+}
+
+.DDR-quote { 
+    margin: 20px 20px 0 20px;
+    color: #82868C;
+}
+
+.DDR-button-container {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.DDR-rating-button {
+    text-align: center;
+
+    width: 232px;
+    height: 45px;
+    margin-top: 30px;
+    margin-right: 20px;
+    
+    border-radius: 8px;
+    border: none;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+    background: #4E8AF4; 
+}
+
+
+
+@media (max-width: 800px) {
+    .DDR-ratings-container {
+        flex-direction: column;
+    }
+
+    .DDR-button-container {
+        flex-direction: column;
+    }
+
+    .DDR-rating-button {
+        width: 100%;
+        margin: 20px 0 0 0 ;
+    }
+}

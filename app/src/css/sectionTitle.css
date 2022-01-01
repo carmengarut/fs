@@ -1,0 +1,25 @@
+.SectionTitleContainer {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+
+    margin: 10px 10px 30px 10px;
+}
+
+.SectionTitle {
+    margin-left: 10px;
+    margin-bottom: 0px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+
+    color: #283252;
+}
+
+@media (max-width: 800px) {
+    .SectionTitleContainer {
+        margin: 0px;
+    }
+}

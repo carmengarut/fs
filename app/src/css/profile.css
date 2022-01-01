@@ -1,0 +1,222 @@
+.ProfileContainer { 
+    padding: 20px 100px;
+}
+
+
+
+.ProfileCard {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: #FFFFFF;
+    /* Shadow Card */
+
+    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+    border-radius: 8px;
+
+    padding: 30px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #3A3C40;
+}
+
+.ProfileSubcontainer1 {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+
+    margin: 25px 0 0 0;
+}
+
+.ProfileName {
+    margin-left: 16px;
+    margin-right: 10px;
+}
+
+.ProfileTrustRate {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    width: fit-content;
+
+    margin-left: 10px;
+    color: #FFFFFF;
+
+    padding: 4.5px 17px;
+
+    background: #2CC5BD;
+    border-radius: 20px;
+}
+
+.ProfileForm { 
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.ProfileRow1 {
+    display: -webkit-flex;
+    display: flex;
+    margin: 40px 0 20px 0;
+}
+
+.ProfileFieldGroup {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    text-align: left;
+
+  
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+
+
+    color: #626266;
+}
+
+
+.Field {
+    margin-top: 10px;
+
+    padding-left: 13px;
+    width: 232px;
+    height: 46px;
+
+    background: #F6F6F6;
+    border-radius: 8px;
+    border: none;
+
+    
+}
+
+.ProfileButtonsContainer {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+    margin: 25px 10px;
+}
+
+.LogoutButton {
+    /* Auto Layout */
+    width: 232px;
+    height: 45px;
+
+    justify-content: center;
+    margin-right: 10px;
+    
+    /* Grayscale 900 Opacity / 12% */
+    background: #FFFFFF;
+    border: 1px solid rgba(18, 17, 39, 0.12);
+    border-radius: 8px;
+    
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    text-align: center;
+
+    /* Grayscale / 900 */
+
+    color: #121127;
+
+}
+
+.SaveButton {
+
+    width: 232px;
+    height: 45px;
+
+    /* Blue / 500 */
+
+    background: #4E8AF4;
+    border-radius: 8px;
+    border: none;
+    margin-left: 10px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    text-align: center;
+
+    /* Black & White/White */
+
+    color: #FFFFFF;
+
+}
+
+@media (max-width: 800px) {
+    .ProfileContainer {
+        padding: 80px 20px 40px 20px;  
+    }
+
+    .ProfileHeader {
+        margin-top: 0px;
+    }
+
+    .LogoutButton {
+        width: 150px;
+        margin: 0px;
+    }
+
+    .ProfileCard {
+        padding: 30px 20px;
+    }
+
+    .ProfileSubcontainer1 {
+        margin-bottom: 0;
+    }
+
+    .ProfileTrustRate {
+        display: inline-flex;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .ProfileRow1 {
+        flex-direction: column;
+        margin: 0px
+    }
+
+    .ProfileForm {
+        width: 100%;
+        
+    }
+
+    .ProfileFieldGroup {
+        width: 100%;
+        margin-top: 20px;
+        margin-right: 0;
+        
+    }
+
+    .Field {
+        width: 100%;
+        
+    }
+
+    .SaveButton {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+}

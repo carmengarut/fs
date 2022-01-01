@@ -1,0 +1,137 @@
+{
+    "header_web": {
+        "brand_name": "eTrust",
+        "sign_up": "Sign Up",
+        "sign_in": "Sign In",
+        "es": "Español",
+        "en": "English"
+    },
+    "landing_page": {
+        "h1": "Build trustworthy agreements",
+        "h2": "Ensure the reliability of the other party and get your agreements fulfilled.",
+        "button_1": "How we do it?",
+        "button_2": "Start Now",
+        "box_1_title": "Understand other party’s reliability",
+        "box_1_content":"Search other parties profile to look at their trust rate. We calculate it based on the perfectage of agreements fulfilled.",
+        "box_2_title": "Ensuring immutability through blockchain technology",
+        "box_2_content": "Once signed by both parts, the agreement will be encrypted and stored in the blockchain, ensuring its immutability.",
+        "box_3_title": "Enforce the fulfillment of your agreements",
+        "box_3_content": "You will evaluate the fullfilment of the other part when the agreement is completed. This feedback will be public, enforcing good behaviour."
+    },
+    "footer": {
+        "contact_details": "Contact +34 617 99 85 94"
+    },
+    "sign_up": {
+        "title": "Let's get started",
+        "name": "Name",
+        "surname": "Surname",
+        "email": "Email",
+        "password": "Password",
+        "terms_and_conditions": "I agree to terms and conditions",
+        "create_account": "Create Account",
+        "have_account": "Have an account? ",
+        "sign_in": "Sign In"
+
+    },
+    "sign_in": {
+        "title": "Log in to your account",
+        "email": "Email",
+        "password": "Password",
+        "login": "Log In",
+        "dont_have_account": "Don't have an account? ",
+        "sign_up": "Sign Up"
+    },
+    "agreements_page": {
+        "agreements": "Contracts",
+        "new_deal": "New Contract",
+        "title": "Title",
+        "user": "User",
+        "creation_date": "Creation Date",
+        "signed": "Signed",
+        "status": "Status",
+        "no_deals": "No contracts added"
+    },
+    "deal": {
+        "signed": "Signed",
+        "not_signed": "Not Signed"
+    },
+    "header": {
+        "agreements": "Contracts",
+        "users": "Users",
+        "profile": "Profile"   
+    },
+    "users_page": {
+        "users": "Users",
+        "search": "Search user...",
+        "trust_rate": "% trust"
+    },
+    "profile_page": {
+        "profile": "Profile",
+        "edit_your_account_info": "Edit your account information:",
+        "name": "Name",
+        "surname": "Surname",
+        "email": "Email",
+        "logout": "Logout",
+        "save_changes": "Save Changes"  
+    },
+    "create_contract_page": {
+        "contracts": "Contracts",
+        "title": "Create a new contract:",
+        "contract_title": "Contract Title",
+        "contract_title_placeholder": "Introduce the title of the contract",
+        "content": "Contract Content (Describe all the details and clauses of the contract)",
+        "content_placeholder": "Introduce the content of the contract",
+        "email": "Email of the person you want to send the contract",
+        "email_placeholder": "Introduce the email of the person you want to send the contract",
+        "save": "Create Contract",
+        "dont_have_account": "User doesn't have an eTrust account",
+        "want_to_send_invitation": " doesn't have an eTrust account. Do you want to send him and invitation?",
+        "invite_user": "Invite User",
+        "cancel": "Cancel"
+    },
+    "deal_details": {
+        "contract_details": "Contract Details - ",
+        "contract_status": "Contract status: ",
+        "contract_members": "Contract members:",
+        "saved": "Saved!",
+        "contract_successfully_edited_1": "The contract ",
+        "contract_successfully_edited_2": " has been successfully edited. The other member of the contract has been notified about the change.",
+        "go_to_contracts": "Go to contracts",
+        "continue_editing": "Continue editing"
+    },
+    "deal_details_member_card": {
+        "creator": "Creator",
+        "signed": "Signed",
+        "not_signed": "Not Signed",
+        "invitation_pending": "(Invitation pending)"
+    },
+    "deal_details_form": {
+        "contract_details": "Contract details :",
+        "title": "Contract Title",
+        "title_placeholder": "Introduce the title of the contract",
+        "content": "Contract Content (Describe all the details and clauses of the contract)",
+        "content_placeholder": "Introduce the content of the contract",
+        "creation_date": "Creation date: ",
+        "propose_changes": "Propose Changes",
+        "sign_now": "Sign Now"
+    },
+    "ratings": {
+        "contract_ratings": "Contract ratings: ",
+        "submit_rating": "Submit Rating",
+        "no_ratings": "No ratings added"
+    },
+    "rating_form": {
+        "contracts": "Contracts",
+        "rate_contract": "Rate the fulfillment of the contract:",
+        "yes": "Yes",
+        "no": "No",
+        "did_person_fulfill_1": "Did ",
+        "did_person_fulfill_2": " fulfill the contract?",
+        "description": "Comments",
+        "description_placeholder": "Introduce comments",
+        "save": "Add rating",
+        "rating_added": "Rating added!",
+        "successfully_added": "Your rating has been successfully added.",
+        "accept": "Accept"
+    }
+}

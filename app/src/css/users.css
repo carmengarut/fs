@@ -1,0 +1,92 @@
+.UsersContainer { 
+    padding: 20px 100px;
+}
+
+.SearchField {
+    margin: 10px 0px;
+    width: 100%;
+
+    padding-left: 40px;
+
+    height: 46px;
+
+    background: url(../public/search-icon.svg) no-repeat scroll 15px 15px #F6F6F6;
+    background-size: 15px;
+    
+    border-radius: 8px;
+    border: none;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+
+}
+
+.UsersTableRow {
+
+    display: -webkit-flex;
+    display: flex;
+    background: #FFFFFF;
+    align-items: center;
+
+    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+    border-radius: 8px;
+    height: 85px;
+    padding: 20px;
+    margin: 10px 0px;
+
+}
+
+.Name {
+
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    margin: 0 10px 0 20px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 19px;
+}
+
+.TrustRate {
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    width: fit-content;
+
+
+    color: #FFFFFF;
+
+    padding: 4.5px 17px;
+    margin-left: 10px;
+
+    background: #2CC5BD;
+    border-radius: 20px;
+
+}
+
+
+@media (max-width: 800px) {
+    .UsersContainer { 
+        padding: 80px 20px 40px 20px;  
+       
+    }
+
+    .Name {
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .TrustRate { 
+        margin-top: 10px;
+        margin-left: 0;
+    }
+}

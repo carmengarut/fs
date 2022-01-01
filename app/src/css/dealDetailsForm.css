@@ -1,0 +1,110 @@
+.DDF-field-group {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  
+    margin: 10px 0px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #626266;
+}
+
+.DDF-field {
+    height: 46px;
+    margin-top: 10px;
+    padding-left: 13px;
+
+    border-radius: 8px;
+    border: none;
+
+    background: #F6F6F6;
+}
+
+.DDF-textarea {
+    height: 100px;
+    margin-top: 10px;
+    padding-top: 14px;
+    padding-left: 13px;
+
+    
+    border-radius: 8px;
+    border: none;
+
+    background: #F6F6F6;
+}
+
+.DDF-creation-date {
+    text-align: left;
+
+    margin-top: 20px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    color: #82868C;
+}
+
+.DDF-buttons-container {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.DDF-save-button {
+    text-align: center;
+
+    width: 232px;
+    height: 45px;
+    margin: 20px 20px 0 0 ;
+
+    border: 1px solid rgba(18, 17, 39, 0.12);
+    border-radius: 8px;
+    
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #000;
+
+    background: #FFFFFF;
+}
+
+.DDF-sign-button {
+    text-align: center;
+
+    width: 232px;
+    height: 45px;
+    margin-top: 20px;
+    
+    border-radius: 8px;
+    border: none;
+    
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    color: #FFFFFF;
+
+    background: #4E8AF4;
+    
+}
+
+@media (max-width: 800px) {
+    .DDF-buttons-container {
+        flex-direction: column;
+    }
+
+    .DDF-save-button, .DDF-sign-button {
+        width: 100%;
+        margin: 20px 0 0 0 ;
+    }
+    
+}
