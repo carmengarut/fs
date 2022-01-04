@@ -45,14 +45,14 @@ function Deals () {
         return (deal.createdBy === user.id || deal.member.id === user.id)
       }).length > 0
         ? deals.filter(deal => {
-          if (deal.createdBy.id) return (deal.createdBy.id === user.id || deal.member.id === user.id)
-          return (deal.createdBy === user.id || deal.member.id === user.id)
-        }).map((deal, i) =>
-          <Deal
-            key={i}
-            deal={deal}
-          />
-        )
+            if (deal.createdBy.id) return (deal.createdBy.id === user.id || deal.member.id === user.id)
+            return (deal.createdBy === user.id || deal.member.id === user.id)
+          }).map((deal, i) =>
+            <Deal
+              key={i}
+              deal={deal}
+            />
+          )
         : (
           <div className='D-no-deals-container'>
             <img

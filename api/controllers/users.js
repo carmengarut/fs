@@ -3,34 +3,6 @@ const usersRouter = require('express').Router()
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const userExtractor = require('../middleware/userExtractor')
-const {sendInviteUserEmail} = require('../middleware/emailNotifications')
-
-// const multer = require('multer')
-// const  { v4: uuidv4 } = require('uuid')
-
-// const DIR = './public/';
-
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//       cb(null, DIR);
-//   },
-//   filename: (req, file, cb) => {
-//       const fileName = file.originalname.toLowerCase().split(' ').join('-');
-//       cb(null, uuidv4() + '-' + fileName)
-//   }
-// })
-
-// let upload = multer({
-//   storage: storage,
-//   fileFilter: (req, file, cb) => {
-//       if (file.mimetype == "image/png" || file.mimetype == "image/jpg" || file.mimetype == "image/jpeg") {
-//           cb(null, true);
-//       } else {
-//           cb(null, false);
-//           return cb(new Error('Only .png, .jpg and .jpeg format allowed!'));
-//       }
-//   }
-// })
 
 usersRouter.get('/', async (request, response) => {
   const users = await User.find({})
@@ -43,10 +15,8 @@ usersRouter.get('/:id', async (request, response) => {
   response.json(user)
 })
 
-// usersRouter.post('/', upload.single('profileImg'), async (request, response) => {
 usersRouter.post('/', async (request, response) => {
   try {
-    //const url = request.protocol + '://' + request.get('host')
     const { body } = request
     const { email, name, surname, password, profileImg } = body
 
@@ -63,9 +33,7 @@ usersRouter.post('/', async (request, response) => {
         surname,
         passwordHash,
         profileImg,
-        status: 'active',
         creationDate: new Date().toISOString(),
-        //profileImg: url + '/public/' + request.file.filename
       })
 
       const savedUser = await user.save()
@@ -88,78 +56,9 @@ usersRouter.post('/', async (request, response) => {
         name: savedUser.name,
         surname: savedUser.surname,
         profileImg: savedUser.profileImg,
-        deals: savedUser.deals,
-        status: savedUser.status,
+        orders: savedUser.orders,
         id: savedUser._id,
         token
-      }
-
-      response.status(201).json(userReturned)
-    } else if (existingUser.status === 'inactive') {
-
-      const updatedUser = await User.findOneAndUpdate({email: email}, {name, surname, passwordHash, profileImg, status: 'active', creationDate: new Date().toISOString()}, { new: true })
-
-        const userForToken = {
-          id: updatedUser._id,
-          email: updatedUser.email
-        }
-  
-        const token = jwt.sign(
-          userForToken,
-          process.env.SECRET,
-          {
-            expiresIn: 60 * 60 * 24 * 7
-          }
-        )
-  
-        const userReturned = {
-          email: updatedUser.email,
-          name: updatedUser.name,
-          surname: updatedUser.surname,
-          profileImg: updatedUser.profileImg,
-          deals: updatedUser.deals,
-          status: updatedUser.status,
-          id: updatedUser._id,
-          token
-        }
-
-        response.status(201).json(userReturned)
-    } else {
-      throw 'Error: User already exists'
-    }
-    
-  } catch (error) {
-    console.log(error.name)
-    console.log(error.message)
-    response.status(400).json(error)
-  }
-})
-
-usersRouter.post('/invite', async (request, response) => {
-  try {
-    //const url = request.protocol + '://' + request.get('host')
-    const { body } = request
-    const { email, senderName, contractTitle } = body
-
-    
-
-    const existingUser = await User.findOne( {email: email})
-
-    console.log(existingUser)
-    if (!existingUser) {
-      const user = new User({
-        email,
-        status: 'inactive',
-        invitationDate: new Date().toISOString()
-      })
-
-      const savedUser = await user.save()
-
-      sendInviteUserEmail(senderName, email, contractTitle)
-      const userReturned = {
-        email: savedUser.email,
-        status: savedUser.status,
-        id: savedUser._id,
       }
 
       response.status(201).json(userReturned)

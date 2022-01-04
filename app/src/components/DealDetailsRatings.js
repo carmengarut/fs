@@ -43,7 +43,7 @@ export default function DealDetailsRatings () {
               <i className='DDR-quote'>"{rating.content}"</i>
 
             </div>
-          ))
+            ))
           : <div className='DDR-rating-card-empty'>{t('ratings.no_ratings')}</div>
       }
       </div>

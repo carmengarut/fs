@@ -1,20 +1,24 @@
 
 const { Schema, model } = require('mongoose')
 
-const userSchema = new Schema({
+const businessSchema = new Schema({
   email: String,
   name: String,
-  surname: String,
   passwordHash: String,
   profileImg: String,
   creationDate: Date,
+  status: String,
+  items: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Item'
+  }],
   orders: [{
     type: Schema.Types.ObjectId,
     ref: 'Order'
   }]
 })
 
-userSchema.set('toJSON', {
+businessSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id
     delete returnedObject._id
@@ -23,6 +27,6 @@ userSchema.set('toJSON', {
   }
 })
 
-const User = model('User', userSchema)
+const Business = model('Business', businessSchema)
 
-module.exports = User
+module.exports = Business

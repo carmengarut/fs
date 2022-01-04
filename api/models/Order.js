@@ -1,25 +1,25 @@
 const { Schema, model } = require('mongoose')
 
-const ratingSchema = new Schema({
-  fulfilled: String,
-  content: String,
-  date: Date,
+const orderSchema = new Schema({
+  total: Number,
+  currency: String,
+  creationDate: Date,
   status: String,
-  createdBy: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  recipient: {
+  business: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
+    ref: 'Business'
   },
-  deal: {
+  items: [{
     type: Schema.Types.ObjectId,
-    ref: 'Deal'
-  }
+    ref: 'Item'
+  }]
 })
 
-ratingSchema.set('toJSON', {
+orderSchema.set('toJSON', {
   transform: (document, returnedObject) => {
     returnedObject.id = returnedObject._id
     delete returnedObject._id
@@ -27,6 +27,6 @@ ratingSchema.set('toJSON', {
   }
 })
 
-const Rating = model('Rating', ratingSchema)
+const Order = model('Order', orderSchema)
 
-module.exports = Rating
+module.exports = Order

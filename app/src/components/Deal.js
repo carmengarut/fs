@@ -34,12 +34,12 @@ const Deal = ({ deal }) => {
           {console.log(deal.member.id === false)}
           {deal.member.id !== 'undefined'
             ? user.id === deal.member.id
-              ? deal.createdBy.name
                 ? deal.createdBy.name
-                : deal.createdBy.email
-              : deal.member.name
-                ? deal.member.name
-                : deal.member.email
+                    ? deal.createdBy.name
+                    : deal.createdBy.email
+                : deal.member.name
+                  ? deal.member.name
+                  : deal.member.email
             : user.id === deal.member
               ? users.find(user => user.id === deal.createdBy).name
               : users.find(user => user.id === deal.member).name}

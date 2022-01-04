@@ -12,11 +12,13 @@ const notFound = require('./middleware/notFound')
 const handleErrors = require('./middleware/handleErrors')
 
 const usersRouter = require('./controllers/users')
-const loginRouter = require('./controllers/login')
-const dealsRouter = require('./controllers/deals')
-const ratingsRouter = require('./controllers/ratings.js')
+const businessesRouter = require('./controllers/businesses')
+const loginUserRouter = require('./controllers/loginUser')
+const loginBusinessRouter = require('./controllers/loginBusiness')
+const itemsRouter = require('./controllers/items')
+const ordersRouter = require('./controllers/orders.js')
 
-// app.use(express.urlencoded({extended: true})); 
+// app.use(express.urlencoded({extended: true}));
 app.use(cors())
 app.use(express.json())
 app.use(logger)
@@ -24,7 +26,7 @@ app.use(logger)
 app.use(express.static('public'))
 app.use('/login', express.static('public'))
 app.use('/register', express.static('public'))
-app.use('/deals', express.static('public'))
+app.use('/items', express.static('public'))
 app.use('/users', express.static('public'))
 app.use('/profile', express.static('public'))
 
@@ -49,10 +51,12 @@ app.use(Sentry.Handlers.requestHandler())
 // TracingHandler creates a trace for every incoming request
 app.use(Sentry.Handlers.tracingHandler())
 
-app.use('/api/deals', dealsRouter)
+app.use('/api/items', itemsRouter)
 app.use('/api/users', usersRouter)
-app.use('/api/login', loginRouter)
-app.use('/api/ratings', ratingsRouter)
+app.use('/api/businesses', businessesRouter)
+app.use('/api/login', loginUserRouter)
+app.use('/api/login-business', loginBusinessRouter)
+app.use('/api/orders', ordersRouter)
 
 if (process.env.NODE_ENV === 'test') {
   const testingRouter = require('./controllers/testing')
