@@ -1,89 +1,82 @@
-.LoginComponent {
+.rf-container {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    color: #FFFFFF;
 }
 
-.Container {
+.rf-box {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     margin: 20px;
     padding: 40px;
-    background: #FFFFFF;
 
-    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
     border-radius: 12px;
-
-    display: -webkit-flex;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
+    border: 2px solid #FFFFFF;
 }
 
-.H3 {
-font-family: Poppins;
-font-style: bold;
-font-weight: 600;
-font-size: 28px;
-line-height: 42px;
-text-align: center;
-
-/* Grey/800 */
-
-color: #121625;
+.rf-title {
+    font-family: Poppins;
+    font-style: bold;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: center;
+    color: #FFFFFF;
 }
 
-.Row1 {
+.rf-row-1 {
     display: -webkit-flex;
     display: flex;
     margin-top: 40px;
 }
 
-.Row2 {
+.rf-row-2 {
     display: -webkit-flex;
     display: flex;
     margin: 20px 0 30px 0;
 }
 
-.FieldGroup {
+.rf-field-group {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
-    margin: 0px 10px;
     text-align: left;
 
-  
+    margin: 0px 10px;
+
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
-    /* identical to box height */
-
-
-    color: #626266;
+    color: #fff;
 }
 
 
-.Field {
-    margin-top: 10px;
-
-    padding-left: 13px;
+.rf-field {
     width: 232px;
     height: 46px;
-
-    background: #F6F6F6;
+    margin-top: 10px;
+    padding-left: 13px;
+    
+    background: #FFFFFF;
     border-radius: 8px;
     border: none;
-
-    
 }
 
-.CheckboxContainer {
+.rf-checkbox-container {
     display: block;
+
     position: relative;
     padding-left: 35px;
     margin: 20px 10px;
+
     cursor: pointer;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -95,14 +88,10 @@ color: #121625;
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
-
-
-    color: #000;
+    color: #fff;
 }
 
-
-
-.CheckboxContainer input {
+.rf-checkbox-container input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -110,11 +99,11 @@ color: #121625;
     width: 0;
   }
 
-.Checkbox {
+.rf-checkbox {
     position: absolute;
     top: -3px;
     left: 0;
-    background: #F6F6F6;
+    background: #FFFFFF;
     border-radius: 4px;
     border: none;
     height: 25px;
@@ -122,25 +111,25 @@ color: #121625;
     display: inline-block;
 }
 
-.CheckboxContainer:hover input ~ .Checkbox{
+.rf-checkbox-container:hover input ~ .rf-checkbox{
     background-color: #ccc;
   }
 
-.CheckboxContainer input:checked ~ .Checkbox {
-background-color: #4E8AF4;
+.rf-checkbox-container input:checked ~ .rf-checkbox {
+    background-color: #8B5CF6;
 }
 
-.Checkbox:after {
+.rf-checkbox:after {
     content: "";
     position: absolute;
     display: none;
   }
 
-.CheckboxContainer input:checked ~ .Checkbox:after {
+.rf-checkbox-container input:checked ~ .rf-checkbox:after {
     display: block;
 }
 
-.CheckboxContainer .Checkbox:after {
+.rf-checkbox-container .rf-checkbox:after {
     left: 10px;
     top: 7px;
     width: 5px;
@@ -153,17 +142,11 @@ background-color: #4E8AF4;
     transform: rotate(45deg);
   }
 
-  .CreateAccountButton {
+  .rf-button {
     width: 96%;
     margin: 10px;
     margin-bottom: 30px;
-    
-
     padding: 10px 20px;
-    
-    /* Blue / 500 */
-    
-    background: #4E8AF4;
     
     border-radius: 8px;
     border: none;
@@ -173,36 +156,40 @@ background-color: #4E8AF4;
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
+    color: #FFFFFF;
 
-    color: #FFFFFF
-    
+    background: #8B5CF6;
     }
 
 form { 
     font-family: Poppins;
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 21px;
-text-align: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+}
+
+.rf-link {
+    color: #8B5CF6;
 }
 
 @media (max-width: 550px) {
-    .Container {
+    .rf-box {
         margin: 10px 20px;
         padding: 30px 10px;
     }
-    .Row1, .Row2 {
+    .rf-row-1, .rf-row-2 {
       margin: 0px; 
       flex-direction: column;
     }  
 
-    .Field {
+    .rf-field {
         margin: 0px 0px;
         width: 100%;
     }
 
-    .FieldGroup {
+    .rf-field-group {
         margin: 10px 15px;
     }
 
@@ -211,26 +198,26 @@ text-align: center;
        
     }
 
-    .CheckboxContainer {
+    .rf-checkbox-container {
         margin: 20px 15px;
       
     }
 
 }
 
-@media (max-width: 360px) {
-    .CheckboxContainer {
+@media (max-width: 420px) {
+    .rf-checkbox-container {
         font-size: 12px;
     }
 
-    .Container {
-        margin: 0px 0px 20px 0px;
+    .rf-box {
+        margin: 20px 0px 20px 0px;
+        padding: 0px;
 
-    padding: 0px;
-    background: none;
+        border-radius: 0px;
+        border: none;
 
-    box-shadow: none;
-    border-radius: 0px;
+        background: none;
     }
 }
 

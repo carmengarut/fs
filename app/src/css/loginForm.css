@@ -1,38 +1,42 @@
-.LoginComponent {
+.lf-container {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    color: #FFFFFF;
 }
 
-.LoginContainer {
+.lf-box {
     margin: 20px;
     padding: 40px;
-    background:#FFFFFF;
 
-    box-shadow: 0px 7px 20px rgba(40, 41, 61, 0.08);
+    border: 2px solid #FFFFFF;
     border-radius: 12px;
-
 }
 
-.LoginTitle {
-font-family: Poppins;
-font-style: bold;
-font-weight: 600;
-font-size: 28px;
-line-height: 42px;
-text-align: center;
-margin-bottom: 30px;
+.lf-title {
+    text-align: center;
+
+    margin-bottom: 30px;
+
+    font-family: Poppins;
+    font-style: bold;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 42px;
+    color: #FFFFFF;
 }
 
-.LoginFieldGroup {
+.lf-field-group {
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
-    margin: 20px 0px;
     text-align: left;
+
     width: 100%;
+    margin: 20px 0px;
 
   
     font-family: Poppins;
@@ -40,38 +44,26 @@ margin-bottom: 30px;
     font-weight: 600;
     font-size: 14px;
     line-height: 21px;
-    /* identical to box height */
-
-
-    color: #626266;
+    color: #fff;
 }
 
 
-.LoginField {
+.lf-field {
+    height: 46px;
     margin-top: 10px;
-
     padding-left: 13px;
 
-    height: 46px;
-
-    background: #F6F6F6;
     border-radius: 8px;
     border: none;
 
-    
+    background: #FFFFFF;
 }
 
-.LoginButton {
+.lf-button {
     width: 100%;
-    
     margin: 30px 0px;
-
     padding: 10px 20px;
-    
-    /* Blue / 500 */
-    
-    background: #4E8AF4;
-    
+
     border-radius: 8px;
     border: none;
 
@@ -80,27 +72,31 @@ margin-bottom: 30px;
     font-weight: 600;
     font-size: 18px;
     line-height: 27px;
+    color: #FFFFFF;
 
-    color: #FFFFFF
-    
+    background: #8B5CF6;
+}
+
+.lf-link {
+    color: #8B5CF6;
+}
+
+@media (max-width: 420px) {
+
+    .lf-box {
+        margin: 20px 20px 20px 20px;
+        padding: 0px;
+        
+        border-radius: 0px;
+        border: none;
+   
     }
 
-@media (max-width: 360px) {
-
-    .LoginContainer {
-        margin: 0px 20px 20px 20px;
-
-    padding: 0px;
-    background: none;
-
-    box-shadow: none;
-    border-radius: 0px;
-    }
-
-    .LoginButton {
+    .lf-button {
         margin-top: 10px;
     }
-    .LoginTitle {
+
+    .lf-title {
         margin-bottom: 0px;
     }
 }

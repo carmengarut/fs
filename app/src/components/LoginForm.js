@@ -7,7 +7,7 @@ import Notification from './Notification'
 import { useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import logo from '../public/blue-logo.png'
+import logo from '../public/logo-header.svg'
 import '../css/loginForm.css'
 
 export default function LoginForm () {
@@ -28,22 +28,21 @@ export default function LoginForm () {
   return (
     <>
       <Notification />
-      <div className='LoginComponent'>
-
+      <div className='lf-container'>
         <img
           src={logo}
           width='80'
           height='80'
           className='Flag'
         />
-        <div className='LoginContainer'>
-          <h3 className='LoginTitle'>{t('sign_in.title')}</h3>
+        <div className='lf-box'>
+          <h3 className='lf-title'>{t('sign_in.title')}</h3>
 
           <form onSubmit={handleLogin}>
-            <div className='LoginFieldGroup'>
+            <div className='lf-field-group'>
               <label>{t('sign_in.email')}</label>
               <input
-                className='LoginField'
+                className='lf-field'
                 type='email'
                 value={email}
                 name='Email'
@@ -53,10 +52,10 @@ export default function LoginForm () {
               />
             </div>
 
-            <div className='LoginFieldGroup'>
+            <div className='lf-field-group'>
               <label>{t('sign_in.password')}</label>
               <input
-                className='LoginField'
+                className='lf-field'
                 type='password'
                 value={password}
                 name='Password'
@@ -66,10 +65,17 @@ export default function LoginForm () {
               />
             </div>
 
-            <button className='LoginButton' id='form-login-button'>
+            <button className='lf-button' id='form-login-button'>
               {t('sign_in.login')}
             </button>
-            {' '}{' '}{t('sign_in.dont_have_account')}<a onClick={() => history.push('/register')} href=''>{t('sign_in.sign_up')}</a>
+            {' '}{' '}{t('sign_in.dont_have_account')}
+            <a
+              onClick={() => history.push('/register')}
+              href=''
+              className='lf-link'
+            >
+              {t('sign_in.sign_up')}
+            </a>
           </form>
         </div>
       </div>
