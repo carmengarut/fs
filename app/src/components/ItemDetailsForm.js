@@ -3,14 +3,14 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { signDeal, editDeal } from '../reducers/dealReducer'
+import { editItem } from '../reducers/itemReducer'
 import '../css/dealDetailsForm.css'
 
-export default function DealDetailsForm ({ deal }) {
+export default function ItemDetailsForm ({ item }) {
   const [title, setTitle] = useState('')
   const [content, setContent] = useState('')
 
-  const user = useSelector(state => state.user)
+  const business = useSelector(state => state.business)
 
   const { id } = useParams()
 
@@ -18,15 +18,14 @@ export default function DealDetailsForm ({ deal }) {
   const { t } = useTranslation('global')
 
   useEffect(() => {
-    if (deal) {
-      setTitle(deal.title)
-      setContent(deal.content)
+    if (item) {
+      setTitle(item.title)
+      setContent(item.content)
     }
-  }, [deal])
+  }, [item])
 
   const handleSign = () => {
-    const users = [...deal.signedBy.map(user => user.id), user.id]
-    dispatch(signDeal(id, users))
+
   }
 
   const handleSubmit = (e) => {
@@ -34,11 +33,11 @@ export default function DealDetailsForm ({ deal }) {
     const editedContract = {
       title,
       content,
-      senderName: user.name,
-      receiverName: user.id === deal.member.id ? `${deal.createdBy.name} ${deal.createdBy.surname}` : `${deal.member.name} ${deal.member.surname}`,
-      receiverEmail: user.id === deal.member.id ? deal.createdBy.email : deal.member.email
+      senderName: business.name,
+      receiverName: business.id === item.member.id ? `${item.createdBy.name} ${item.createdBy.surname}` : `${item.member.name} ${item.member.surname}`,
+      receiverEmail: business.id === item.member.id ? item.createdBy.email : item.member.email
     }
-    dispatch(editDeal(id, editedContract))
+    dispatch(editItem(id, editedContract))
   }
 
   return (
@@ -70,19 +69,19 @@ export default function DealDetailsForm ({ deal }) {
           />
         </div>
 
-        <div className='DDF-creation-date'>{t('deal_details_form.creation_date')}{deal.date.slice(0, 10)}</div>
+        <div className='DDF-creation-date'>{t('deal_details_form.creation_date')}{item.date.slice(0, 10)}</div>
 
         <div className='DDF-buttons-container'>
-          {(title === deal.title && content === deal.content)
+          {(title === item.title && content === item.content)
             ? ''
             : (
               <button type='submit' className='DDF-save-button'>
                 {t('deal_details_form.propose_changes')}
               </button>)}
 
-          {deal.status === 'New'
-            ? deal.signedBy.length > 0
-                ? deal.signedBy.find(userSigned => userSigned.id === user.id)
+          {item.status === 'New'
+            ? item.signedBy.length > 0
+                ? item.signedBy.find(businessSigned => businessSigned.id === business.id)
                     ? ''
                     : <button type='button' onClick={handleSign} className='DDF-sign-button'>{t('deal_details_form.sign_now')}</button>
                 : <button type='button' onClick={handleSign} className='DDF-sign-button'>{t('deal_details_form.sign_now')}</button>

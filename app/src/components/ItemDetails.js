@@ -5,57 +5,57 @@ import { useTranslation } from 'react-i18next'
 
 import Modal from './Modal'
 import SectionTitle from './SectionTitle'
-import DealDetailsMemberCard from './DealDetailsMemberCard'
-import DealDetailsForm from './DealDetailsForm'
-import DealDetailsRatings from './DealDetailsRatings'
+import ItemDetailsMemberCard from './ItemDetailsMemberCard'
+import ItemDetailsForm from './ItemDetailsForm'
+import ItemDetailsRatings from './ItemDetailsOrders'
 
 import { hideModal } from '../reducers/modalReducer'
 
 import successIcon from '../public/success-icon.svg'
 
 import '../css/dealDetails.css'
-export default function DealDetailsHello () {
-  const deals = useSelector(state => state.deals)
+export default function ItemDetails () {
+  const items = useSelector(state => state.items)
 
   const { id } = useParams()
 
-  const deal = deals.find(deal => deal.id === id.toString())
+  const item = items.find(item => item.id === id.toString())
 
   const dispatch = useDispatch()
   const history = useHistory()
   const { t } = useTranslation('global')
 
   const goToContracts = () => {
-    history.push('/deals')
+    history.push('/items')
     dispatch(hideModal())
   }
 
-  if (!deal) {
+  if (!item) {
     return null
   }
   return (
     <div className='DealDetailsContainer'>
       <SectionTitle>
-        {t('deal_details.contract_details')}{deal.title}
+        {t('deal_details.contract_details')}{item.title}
       </SectionTitle>
 
       <div className='DealDetailsCard'>
         <div className='DealDetailsStatusContainer'>{t('deal_details.contract_status')}
           <span className='DealDetailsStatusGreen'>
-            {deal.status}
+            {item.status}
           </span>
         </div>
 
         <div>{t('deal_details.contract_members')}</div>
         <div className='DealDetailsMembers'>
-          <DealDetailsMemberCard deal={deal} user={deal.createdBy} />
-          <DealDetailsMemberCard deal={deal} user={deal.member} />
+          <ItemDetailsMemberCard item={item} user={item.createdBy} />
+          <ItemDetailsMemberCard item={item} user={item.member} />
         </div>
 
-        <DealDetailsForm deal={deal} />
+        <ItemDetailsForm item={item} />
 
-        {deal.status === 'Signed'
-          ? <DealDetailsRatings />
+        {item.status === 'Signed'
+          ? <ItemDetailsRatings />
           : ''}
       </div>
       <Modal action={goToContracts} buttonName={t('deal_details.go_to_contracts')} cancelButtonName={t('deal_details.continue_editing')}>
@@ -66,7 +66,7 @@ export default function DealDetailsHello () {
           height='100'
         />
         <h6>{t('deal_details.saved')}</h6>
-        {t('deal_details.contract_successfully_edited_1')} "{deal.title}" {t('deal_details.contract_successfully_edited_2')}
+        {t('deal_details.contract_successfully_edited_1')} "{item.title}" {t('deal_details.contract_successfully_edited_2')}
       </Modal>
     </div>
   )

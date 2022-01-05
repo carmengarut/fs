@@ -1,6 +1,6 @@
 
 import Notification from './components/Notification'
-import Deal from './components/Deal'
+import Item from './components/Item'
 import { useTranslation } from 'react-i18next'
 
 import { useHistory } from 'react-router-dom'
@@ -8,28 +8,28 @@ import { useSelector } from 'react-redux'
 
 import addContractIcon from './public/add-contract-icon.svg'
 
-import './css/deals.css'
+import './css/items.css'
 
 import SectionTitle from './components/SectionTitle'
 
-function Deals () {
-  const user = useSelector(state => state.user)
-  const deals = useSelector(state => state.deals)
+function Items () {
+  const business = useSelector(state => state.business)
+  const items = useSelector(state => state.items)
 
   const history = useHistory()
   const { t } = useTranslation('global')
 
   return (
-    <div className='DealsContainer'>
+    <div className='i-container'>
       <SectionTitle>
         {t('agreements_page.agreements')}
       </SectionTitle>
       <Notification />
-      <div className='ButtonContainer'>
-        <button onClick={() => history.push('/create-deal')} className='Button'>{t('agreements_page.new_deal')}</button>
+      <div className='i-button-container'>
+        <button onClick={() => history.push('/create-item')} className='Button'>{t('agreements_page.new_deal')}</button>
       </div>
 
-      <div className='TableHeader'>
+      <div className='i-table-header'>
         <div className='ColumnTitleDeal'>{t('agreements_page.title')}</div>
         <div className='Columns2TitleContainer'>
           <div className='ColumnTitle'>{t('agreements_page.user')}</div>
@@ -40,17 +40,17 @@ function Deals () {
           <div className='ColumnTitle'>{t('agreements_page.status')}</div>
         </div>
       </div>
-      {deals.filter(deal => {
-        if (deal.createdBy.id) return (deal.createdBy.id === user.id || deal.member.id === user.id)
-        return (deal.createdBy === user.id || deal.member.id === user.id)
+      {items.filter(item => {
+        if (item.createdBy.id) return (item.createdBy.id === business.id || item.member.id === business.id)
+        return (item.createdBy === business.id || item.member.id === business.id)
       }).length > 0
-        ? deals.filter(deal => {
-            if (deal.createdBy.id) return (deal.createdBy.id === user.id || deal.member.id === user.id)
-            return (deal.createdBy === user.id || deal.member.id === user.id)
-          }).map((deal, i) =>
-            <Deal
+        ? items.filter(item => {
+            if (item.createdBy.id) return (item.createdBy.id === business.id || item.member.id === business.id)
+            return (item.createdBy === business.id || item.member.id === business.id)
+          }).map((item, i) =>
+            <Item
               key={i}
-              deal={deal}
+              item={item}
             />
           )
         : (
@@ -62,10 +62,10 @@ function Deals () {
               height='100'
             />
             <div className='D-no-deals-text'>{t('agreements_page.no_deals')}</div>
-            <button onClick={() => history.push('/create-deal')} className='Button'>{t('agreements_page.new_deal')}</button>
+            <button onClick={() => history.push('/create-item')} className='Button'>{t('agreements_page.new_deal')}</button>
           </div>)}
     </div>
   )
 }
 
-export default Deals
+export default Items

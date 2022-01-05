@@ -36,7 +36,7 @@ export default function Header () {
         />
         <div className='ToggleSection'>
           <nav className='NavigationMenu'>
-            <div className='Section' onClick={() => { history.push('/deals') }}>
+            <div className='Section' onClick={() => { history.push('/items') }}>
               <img
                 alt=''
                 src={contractsIcon}

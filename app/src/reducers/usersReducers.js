@@ -1,4 +1,4 @@
-import { getAllUsers } from '../services/deals'
+import { getAllUsers } from '../services/items'
 
 const initialState = []
 

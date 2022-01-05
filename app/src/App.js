@@ -8,8 +8,8 @@ import LoginForm from './components/LoginForm'
 import RegistrationForm from './components/RegistrationForm'
 import LandingPage from './LandingPage'
 import HeaderWeb from './components/HeaderWeb'
-import { dealInit } from './reducers/dealReducer'
-import { ratingInit } from './reducers/ratingReducer'
+import { itemInit } from './reducers/itemReducer'
+import { orderInit } from './reducers/orderReducer'
 import { usersInit } from './reducers/usersReducers'
 
 const App = () => {
@@ -23,8 +23,8 @@ const App = () => {
       dispatch(userSet(userToSet))
     }
 
-    dispatch(dealInit())
-    dispatch(ratingInit())
+    dispatch(itemInit())
+    dispatch(orderInit())
     dispatch(usersInit())
   }, [])
 
@@ -45,12 +45,16 @@ const App = () => {
                 <LoginForm />
               </Route>
 
+              <Route path='/login-business'>
+                <LoginForm />
+              </Route>
+
               <Route path='/register'>
                 <RegistrationForm />
               </Route>
 
-              <Route path='/landing'>
-                <LandingPage />
+              <Route path='/register-business'>
+                <RegistrationForm />
               </Route>
 
               <Route path='/'>

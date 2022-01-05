@@ -1,23 +1,23 @@
 import React, { useEffect } from 'react'
-import { addNewDeal } from '../reducers/dealReducer'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+
 import Modal from './Modal'
-import { hideModal, showModal } from '../reducers/modalReducer'
-import { usersInit } from '../reducers/usersReducers'
+import SectionTitle from './SectionTitle'
+
+import { showModal } from '../reducers/modalReducer'
+import { businessesInit } from '../reducers/businessesReducer'
+import { addNewItem } from '../reducers/itemReducer'
+
+import useForm from '../hooks/useForm'
 
 import inviteUserIcon from '../public/invite-user-icon.svg'
 
-import '../css/dealForm.css'
-import useForm from '../hooks/useForm'
-import { inviteUser } from '../services/deals'
-import { removeNotification, setNotification } from '../reducers/notificationReducer'
-import SectionTitle from './SectionTitle'
+import '../css/itemForm.css'
 
-export default function DealForm () {
-  const users = useSelector(state => state.users)
-  const user = useSelector(state => state.user)
+export default function ItemForm () {
+  const businesses = useSelector(state => state.businesses)
 
   const { handleChange, values, errors } = useForm()
 
@@ -26,52 +26,26 @@ export default function DealForm () {
   const { t } = useTranslation('global')
 
   useEffect(() => {
-    dispatch(usersInit())
+    dispatch(businessesInit())
   }, [])
 
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    const isUser = users.some(user => user.email === values.email)
+    const isBusiness = businesses.some(business => business.email === values.email)
 
-    if (isUser) {
-      const dealObject = {
+    if (isBusiness) {
+      const itemObject = {
         title: values.title,
         content: values.content,
         memberEmail: values.email
       }
 
-      dispatch(addNewDeal(dealObject))
+      dispatch(addNewItem(itemObject))
 
-      history.push('/deals')
+      history.push('/items')
     } else {
       dispatch(showModal())
-    }
-  }
-
-  const handleInviteUser = async () => {
-    try {
-      const invitationDetails = {
-        email: values.email,
-        senderName: `${user.name} ${user.surname}`,
-        contractTitle: values.title
-      }
-      await inviteUser(invitationDetails)
-      dispatch(hideModal())
-      dispatch(setNotification('User Invited'))
-      setTimeout(() => {
-        dispatch(removeNotification())
-      }, 5000)
-      const dealObject = {
-        title: values.title,
-        content: values.content,
-        memberEmail: values.email
-      }
-      dispatch(addNewDeal(dealObject))
-      history.push('/deals')
-    } catch (e) {
-      console.error(e)
-      console.error(e.message)
     }
   }
 
@@ -126,7 +100,7 @@ export default function DealForm () {
           </button>
         </form>
       </div>
-      <Modal action={handleInviteUser} buttonName={t('create_contract_page.invite_user')} cancelButtonName={t('create_contract_page.cancel')}>
+      <Modal buttonName={t('create_contract_page.invite_user')} cancelButtonName={t('create_contract_page.cancel')}>
         <img
           alt=''
           src={inviteUserIcon}

@@ -5,7 +5,7 @@ import '../css/dealDetailsMemberCard.css'
 
 import avatar from '../public/avatar.svg'
 
-export default function DealDetailsMemberCard ({ deal, user }) {
+export default function ItemDetailsMemberCard ({ item, user }) {
   const users = useSelector(state => state.users)
   const { t } = useTranslation('global')
 
@@ -29,20 +29,20 @@ export default function DealDetailsMemberCard ({ deal, user }) {
               : `${users.find(userElem => userElem.id === user).name} ${users.find(userElem => userElem.id === user).surname}`
             }
           </div>
-          {deal.createdBy === user
+          {item.createdBy === user
             ? <div className='DDMC-creator'>{t('deal_details_member_card.creator')}</div>
             : ''}
         </div>
       </div>
       <div className='DDMC-signed-container'>
         <span className={
-        deal.signedBy.some(userSigned => userSigned.id === user.id)
+        item.signedBy.some(userSigned => userSigned.id === user.id)
           ? 'DDMC-signed-green'
           : 'DDMC-signed-red'
       }
         >
           {
-        deal.signedBy.some(userSigned => userSigned.id === user.id)
+        item.signedBy.some(userSigned => userSigned.id === user.id)
           ? t('deal_details_member_card.signed')
           : t('deal_details_member_card.not_signed')
       }

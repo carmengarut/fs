@@ -7,10 +7,10 @@ import avatar from '../public/avatar.svg'
 
 import '../css/dealDetailsRatings.css'
 
-export default function DealDetailsRatings () {
+export default function ItemDetailsOrders () {
   const { id } = useParams()
 
-  const ratings = useSelector(state => state.ratings).filter(rating => rating.deal === id)
+  const orders = useSelector(state => state.orders).filter(order => order.deal === id)
   const user = useSelector(state => state.user)
 
   const history = useHistory()
@@ -21,26 +21,26 @@ export default function DealDetailsRatings () {
       <div>{t('ratings.contract_ratings')}</div>
       <div className='DDR-ratings-container'>
         {
-        ratings.length > 0
-          ? ratings.filter(rating => rating.deal === id).map(rating => (
-            <div key={rating.id} className='DDR-rating-card'>
+        orders.length > 0
+          ? orders.filter(order => order.deal === id).map(order => (
+            <div key={order.id} className='DDR-rating-card'>
               <div className='DDR-rating-header'>
                 <div className='DDR-name-container'>
                   <img
-                    src={rating.createdBy.profileImg || avatar}
+                    src={order.createdBy.profileImg || avatar}
                     width='40px'
                     height='40px'
                   />
-                  <div className='DDR-name'>{rating.createdBy.name} {rating.createdBy.surname}</div>
+                  <div className='DDR-name'>{order.createdBy.name} {order.createdBy.surname}</div>
                 </div>
                 {
-              rating.fulfilled === 'True'
+              order.fulfilled === 'True'
                 ? <FontAwesome name='thumbs-up' size='2x' className='DDR-thumbs-up' />
                 : <FontAwesome name='thumbs-down' size='2x' className='DDR-thumbs-down' />
 }
 
               </div>
-              <i className='DDR-quote'>"{rating.content}"</i>
+              <i className='DDR-quote'>"{order.content}"</i>
 
             </div>
             ))
@@ -48,12 +48,12 @@ export default function DealDetailsRatings () {
       }
       </div>
       {
-        ratings.find(rating => rating.createdBy.id ? rating.createdBy.id === user.id : rating.createdBy === user.id)
+        orders.find(order => order.createdBy.id ? order.createdBy.id === user.id : order.createdBy === user.id)
           ? ''
           : (
             <div className='DDR-button-container'>
               <button
-                onClick={() => history.push(`/rate/${id}`)}
+                onClick={() => history.push(`/order/${id}`)}
                 className='DDR-rating-button'
               >
                 {t('ratings.submit_rating')}

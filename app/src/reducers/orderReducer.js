@@ -1,4 +1,4 @@
-import { addRating, getAllRatings, updateTrustRate } from '../services/deals'
+import { addOrder, getAllOrders } from '../services/items'
 import { setNotification, removeNotification } from './notificationReducer'
 
 const compareFunction = (objectA, objectB) => {
@@ -7,14 +7,14 @@ const compareFunction = (objectA, objectB) => {
 
 const initialState = []
 
-export const ratingReducer = (state = initialState, action) => {
-  if (action.type === '@ratings/init') {
-    const ratings = action.payload
-    ratings.sort(compareFunction)
-    return ratings
+export const orderReducer = (state = initialState, action) => {
+  if (action.type === '@orders/init') {
+    const orders = action.payload
+    orders.sort(compareFunction)
+    return orders
   }
 
-  if (action.type === '@ratings/created') {
+  if (action.type === '@orders/created') {
     return [...state, action.payload]
   }
 
@@ -46,27 +46,26 @@ export const ratingReducer = (state = initialState, action) => {
   return state
 }
 
-export const ratingInit = () => {
+export const orderInit = () => {
   return async (dispatch) => {
-    const ratings = await getAllRatings()
+    const orders = await getAllOrders()
     dispatch({
-      type: '@ratings/init',
-      payload: ratings
+      type: '@orders/init',
+      payload: orders
     })
   }
 }
 
-export const addNewRating = (ratingObject, newTrustRate) => {
+export const addNewOrder = (orderObject, newTrustRate) => {
   return async (dispatch) => {
-    const savedRating = await addRating(ratingObject)
-    await updateTrustRate(ratingObject.recipientId, newTrustRate)
-    dispatch(setNotification('Rating added.'))
+    const savedOrder = await addOrder(orderObject)
+    dispatch(setNotification('Order added.'))
     setTimeout(() => {
       dispatch(removeNotification())
     }, 5000)
     dispatch({
-      type: '@ratings/created',
-      payload: savedRating
+      type: '@orders/created',
+      payload: savedOrder
     })
   }
 }

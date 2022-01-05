@@ -1,22 +1,22 @@
 {
     "header_web": {
-        "brand_name": "eTrust",
+        "brand_name": "Kampei",
         "sign_up": "Sign Up",
         "sign_in": "Sign In",
         "es": "Español",
         "en": "English"
     },
     "landing_page": {
-        "h1": "Build trustworthy agreements",
-        "h2": "Ensure the reliability of the other party and get your agreements fulfilled.",
+        "h1": "Increase your customers spending",
+        "h2": "Helping bars’ owners boost their revenue by letting the customers order and pay without the need of a waiter.",
         "button_1": "How we do it?",
         "button_2": "Start Now",
-        "box_1_title": "Understand other party’s reliability",
-        "box_1_content":"Search other parties profile to look at their trust rate. We calculate it based on the perfectage of agreements fulfilled.",
-        "box_2_title": "Ensuring immutability through blockchain technology",
-        "box_2_content": "Once signed by both parts, the agreement will be encrypted and stored in the blockchain, ensuring its immutability.",
-        "box_3_title": "Enforce the fulfillment of your agreements",
-        "box_3_content": "You will evaluate the fullfilment of the other part when the agreement is completed. This feedback will be public, enforcing good behaviour."
+        "box_1_title": "Reduce the time per customer per table",
+        "box_1_content":"Your customers will consume faster reducing the waiting time for serving, ordering and billing. You will have more customers per day.",
+        "box_2_title": "Increase the spending per person",
+        "box_2_content": "You customers won’t need to wait for the waiter to order and deliver the drinks. This will result in more spending per customer.",
+        "box_3_title": "Let the world know where you are",
+        "box_3_content": "Potential customers will know when you are open, what type of music you have and will be able to make online reservations."
     },
     "footer": {
         "contact_details": "Contact +34 617 99 85 94"

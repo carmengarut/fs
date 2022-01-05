@@ -1,43 +1,42 @@
 @import url('./fonts.css');
 
-.Navbar {
-    background: #FFFFFF;
-} 
 
-.BrandName {
-    /* Heading / 4 */
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 140%;
-
-    /* or 34px */
-
-    color: #000000;
-    
-}
-
-.HeaderRightBlock {
+.hw-brand-container {
     display: -webkit-flex;
     display: flex;
     align-items: center;
 }
 
-.FlagBlock { 
+.hw-brand-name {
+    margin-left: 10px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 140%;
+    color: #FFFFFF;
+}
+
+.hw-right-block {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.hw-flag-container { 
   margin-right: 30px;
 }
 
-.FlagDropdown{
+.hw-flag-dropdown{
     display: none;
+
     position:absolute;
     top: 50px;
     right: 20%;
-    width: 190px;
+
+    width: 145px;
   
-    
-    box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
+    border: 1px solid #FFFFFF;
     border-radius: 12px;
     list-style-type: none;
 
@@ -46,110 +45,112 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 140%;
-    background: #FFFFFF;
-    
+    color: #FFFFFF;
 
 }
 
 li {
-    padding: 20px 45px;
-    display: inline-block
+    padding: 20px 20px;
+    display: inline-block;
+    background: none;
 }
 
-.Flag {
+.hw-flag {
     display: inline-block;
     margin-right: 10px;
 }
 
-.LastLanguage {
-    border-top: 1px solid rgba(18, 17, 39, 0.12);
+.hw-last-language {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: none;
 }
-.FlagBlock:hover .FlagDropdown{
+
+.hw-flag-container:hover .hw-flag-dropdown{
     display: block !important;
     cursor:pointer;
   }
 
-.ActionButtons{
+.hw-action-buttons-container {
     display: -webkit-flex;
     display: flex;
-
 }
 
-.SignUpButton {
-    height: 35px;
-
-    padding: 6px 18px;
-    border: none;
+.hw-signup-button {
     text-align: center;
 
+    height: 35px;
+    padding: 6px 18px;
 
-    background: #4E8AF4;
-    border-radius: 4.32365px;
-    
-    /* Inside Auto Layout */
-    
+    border: 2px solid #8B5CF6;
+    border-radius: 8px;
+
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-
-
     color: #FFFFFF;
     
+    background: #8B5CF6;
 }
 
-.SignInButton {
-
+.hw-signin-button {
     height: 35px;
-
     margin: 0px 12px;
     padding: 6px 18px;
-    text-align: center;
-    
-    
-    /* Grayscale 900 Opacity / 12% */
-    background: #FFFFFF;
-    border: 0.720608px solid rgba(18, 17, 39, 0.12);
-    border-radius: 4.32365px;
+
+    border: 2px solid #FFFFFF;
+    border-radius: 8px;
     
     font-family: Poppins;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    
-
-    color: #121127;
+    color: #FFFFFF;
 }
 
+@media (min-width: 2000px) {
+    .hw-flag-dropdown{
+        right: 30%;
+    }
+}
+
+
 @media (max-width: 1000px) {
-    .FlagDropdown{
+    .hw-flag-dropdown{
         right: 14%;
     }
 }
 
 @media (max-width: 991px) {
-    .ActionButtons {
+    .hw-action-buttons-container {
         flex-direction: column;
         position: absolute;
         top: 60px;
         right: 8%;
 
-        background: #FFFFFF;
-        box-shadow: 0px 20px 50px rgba(18, 17, 39, 0.08);
-        border-radius: 12px;
+        border: 1px solid #FFFFFF;
+        border-radius: 8px;
+
     }
 
-    .SignUpButton {
+    .hw-signup-button {
         margin: 20px 20px 20px 20px;
     }
 
-    .SignInButton {
+    .hw-signin-button {
         margin: 0px 20px 20px 20px;
     }
 }
 
 @media (max-width: 600px) {
-    .ActionButtons{
+    .hw-action-buttons-container{
         right: 3%;
     }
+}
+
+@media (max-width: 300px) {
+.hw-brand-name {
+    font-size: 15px;
+   
+}
 }

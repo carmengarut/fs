@@ -1,6 +1,6 @@
-import { login } from '../services/login'
-import { register } from '../services/register'
-import { editUser, getUser, setToken } from '../services/deals'
+import { loginUser } from '../services/login'
+import { registerUser } from '../services/register'
+import { editUser, getUser, setToken } from '../services/items'
 import { setNotification, removeNotification } from './notificationReducer'
 const initialState = {}
 
@@ -36,7 +36,7 @@ export const userLogin = (credentials) => {
   return async (dispatch) => {
     try {
       console.log('entra reducer')
-      const userToSet = await login(credentials)
+      const userToSet = await loginUser(credentials)
       window.localStorage.setItem(
         'loggedNoteAppUser', JSON.stringify(userToSet)
       )
@@ -87,7 +87,7 @@ export const userLogout = () => {
 export const userRegister = (userToRegister) => {
   return async (dispatch) => {
     try {
-      const userCreated = await register(userToRegister)
+      const userCreated = await registerUser(userToRegister)
       window.localStorage.setItem(
         'loggedNoteAppUser', JSON.stringify(userCreated)
       )

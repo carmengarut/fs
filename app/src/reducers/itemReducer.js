@@ -1,4 +1,4 @@
-import { create, getAll, sign, updateContract } from '../services/deals'
+import { createItem, getAllItems, updateItem } from '../services/items'
 import { showModal } from './modalReducer'
 import { setNotification, removeNotification } from './notificationReducer'
 
@@ -8,45 +8,45 @@ const compareFunction = (objectA, objectB) => {
 
 const initialState = []
 
-export const dealReducer = (state = initialState, action) => {
-  if (action.type === '@deals/init') {
-    const deals = action.payload
-    deals.sort(compareFunction)
-    return deals
+export const itemReducer = (state = initialState, action) => {
+  if (action.type === '@items/init') {
+    const items = action.payload
+    items.sort(compareFunction)
+    return items
   }
 
-  if (action.type === '@deals/created') {
+  if (action.type === '@items/created') {
     return [...state, action.payload]
   }
 
-  if (action.type === '@deals/sign') {
-    const dealUpdated = action.payload
-    const deals = state.map(deal => {
-      if (deal.id === dealUpdated.id) {
-        return {
-          ...deal,
-          signedBy: dealUpdated.signedBy
-        }
-      }
-      return deal
-    })
-    deals.sort(compareFunction)
-    return deals
-  }
+  // if (action.type === '@items/sign') {
+  //   const itemUpdated = action.payload
+  //   const items = state.map(item => {
+  //     if (item.id === itemUpdated.id) {
+  //       return {
+  //         ...item,
+  //         signedBy: itemUpdated.signedBy
+  //       }
+  //     }
+  //     return item
+  //   })
+  //   items.sort(compareFunction)
+  //   return items
+  // }
 
-  if (action.type === '@deals/edit') {
-    const dealUpdated = action.payload
-    const deals = state.map(deal => {
-      if (deal.id === dealUpdated.id) {
+  if (action.type === '@items/edit') {
+    const itemUpdated = action.payload
+    const items = state.map(item => {
+      if (item.id === itemUpdated.id) {
         return {
-          ...deal,
-          ...dealUpdated
+          ...item,
+          ...itemUpdated
         }
       }
-      return deal
+      return item
     })
-    deals.sort(compareFunction)
-    return deals
+    items.sort(compareFunction)
+    return items
   }
 
   // if (action.type === '@blogs/add_comment') {
@@ -77,27 +77,27 @@ export const dealReducer = (state = initialState, action) => {
   return state
 }
 
-export const dealInit = () => {
+export const itemInit = () => {
   return async (dispatch) => {
-    const deals = await getAll()
+    const items = await getAllItems()
     dispatch({
-      type: '@deals/init',
-      payload: deals
+      type: '@items/init',
+      payload: items
     })
   }
 }
 
-export const addNewDeal = deal => {
+export const addNewItem = item => {
   return async (dispatch) => {
     try {
-      const newDeal = await create(deal)
-      dispatch(setNotification('Deal successfully created.'))
+      const newItem = await createItem(item)
+      dispatch(setNotification('Item successfully created.'))
       setTimeout(() => {
         dispatch(removeNotification())
       }, 5000)
       dispatch({
-        type: '@deals/created',
-        payload: newDeal
+        type: '@items/created',
+        payload: newItem
       })
     } catch (e) {
       console.error(e)
@@ -106,23 +106,23 @@ export const addNewDeal = deal => {
   }
 }
 
-export const signDeal = (id, users) => {
-  return async (dispatch) => {
-    const dealUpdated = await sign(id, users)
-    dispatch({
-      type: '@deals/sign',
-      payload: dealUpdated
-    })
-  }
-}
+// export const signItem = (id, users) => {
+//   return async (dispatch) => {
+//     const itemUpdated = await sign(id, users)
+//     dispatch({
+//       type: '@items/sign',
+//       payload: itemUpdated
+//     })
+//   }
+// }
 
-export const editDeal = (id, object) => {
+export const editItem = (id, object) => {
   return async (dispatch) => {
-    const dealUpdated = await updateContract(id, object)
+    const itemUpdated = await updateItem(id, object)
     dispatch(showModal())
     dispatch({
-      type: '@deals/edit',
-      payload: dealUpdated
+      type: '@items/edit',
+      payload: itemUpdated
     })
   }
 }

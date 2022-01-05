@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom'
 import { Navbar, Container } from 'react-bootstrap'
 import '../css/headerWeb.css'
-import logo from '../public/blue-logo.png'
+import logo from '../public/logo-header.svg'
 import spainFlag from '../public/spain-flag.svg'
 import ukFlag from '../public/uk-flag.svg'
 
@@ -26,20 +26,19 @@ export default function HeaderWeb () {
   }
 
   return (
-    <Navbar collapseOnSelect expand='lg' sticky='top' className='Navbar'>
+    <Navbar collapseOnSelect expand='lg' sticky='top' variant='dark'>
       <Container>
-        <Navbar.Brand href='' className='BrandName' onClick={() => { history.push('/') }}>
+        <Navbar.Brand href='' className='hw-brand-container' onClick={() => { history.push('/') }}>
           <img
             alt=''
             src={logo}
-            width='45'
-            height='45'
-            className='d-inline-block align-center'
+            width='35'
+            height='35'
           />{' '}
-          {t('header_web.brand_name')}
+          <div className='hw-brand-name'>{t('header_web.brand_name')}</div>
         </Navbar.Brand>
-        <div className='HeaderRightBlock'>
-          <div className='FlagBlock'>
+        <div className='hw-right-block'>
+          <div className='hw-flag-container'>
             <img
               alt=''
               src={i18n.language === 'es'
@@ -48,24 +47,24 @@ export default function HeaderWeb () {
               width='30'
               height='30'
             />
-            <div className='FlagDropdown'>
+            <div className='hw-flag-dropdown'>
               <li onClick={changeLanguageEn}>
                 <img
                   alt=''
                   src={ukFlag}
                   width='30'
                   height='30'
-                  className='Flag'
+                  className='hw-flag'
                 /> {' '} {' '}
                 {t('header_web.en')}
               </li>
-              <li className='LastLanguage' onClick={changeLanguageEs}>
+              <li className='hw-last-language' onClick={changeLanguageEs}>
                 <img
                   alt=''
                   src={spainFlag}
                   width='30'
                   height='30'
-                  className='Flag'
+                  className='hw-flag'
                 />{' '} {' '}
                 {t('header_web.es')}
               </li>
@@ -74,11 +73,11 @@ export default function HeaderWeb () {
           <Navbar.Toggle aria-controls='responsive-navbar-nav' />
           <Navbar.Collapse id='responsive-navbar-nav'>
 
-            <div className='ActionButtons'>
-              <button className='SignUpButton' onClick={() => history.push('/register')}>
+            <div className='hw-action-buttons-container'>
+              <button className='hw-signup-button' onClick={() => history.push('/register')}>
                 {t('header_web.sign_up')}
               </button>
-              <button className='SignInButton' onClick={() => history.push('/login')}>
+              <button className='hw-signin-button' onClick={() => history.push('/login')}>
                 {t('header_web.sign_in')}
               </button>
             </div>

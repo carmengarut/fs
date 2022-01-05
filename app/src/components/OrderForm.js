@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { useParams, useHistory } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
-import { addNewRating } from '../reducers/ratingReducer'
+import { addNewOrder } from '../reducers/orderReducer'
 import { hideModal, showModal } from '../reducers/modalReducer'
 
 import SectionTitle from './SectionTitle'
@@ -14,7 +14,7 @@ import successIcon from '../public/success-icon.svg'
 
 import '../css/ratingForm.css'
 
-const RatingForm = () => {
+const OrderForm = () => {
   const { t } = useTranslation('global')
   const [content, setContent] = useState('')
   const [recipient, setRecipient] = useState({})
@@ -37,21 +37,20 @@ const RatingForm = () => {
   ])
 
   const { id } = useParams()
-  const deals = useSelector(state => state.deals)
-  const ratings = useSelector(state => state.ratings)
+  const items = useSelector(state => state.items)
   const user = useSelector(state => state.user)
 
-  const deal = deals.find(deal => deal.id === id.toString())
+  const item = items.find(item => item.id === id.toString())
   const dispatch = useDispatch()
   const history = useHistory()
 
   useEffect(() => {
-    if (deal) {
-      setRecipient((user.id === deal.member.id)
-        ? deal.createdBy
-        : deal.member)
+    if (item) {
+      setRecipient((user.id === item.member.id)
+        ? item.createdBy
+        : item.member)
     }
-  }, [deal])
+  }, [item])
 
   const resetThenSet = (id, key) => {
     setDropdownList(prev => {
@@ -63,25 +62,19 @@ const RatingForm = () => {
   const handleSubmit = async (event) => {
     event.preventDefault()
 
-    const ratingObject = {
+    const orderObject = {
       fulfilled: dropdownList.find(item => item.selected === true).value,
       content,
       recipientId: recipient.id,
-      dealId: id
+      itemId: id
     }
 
-    let newTrustRate
-
-    ratingObject.fulfilled === 'True'
-      ? newTrustRate = Math.round(100 * (ratings.filter(rating => (rating.fulfilled === 'True') && (rating.recipient.id === recipient)).length + 1) / (ratings.filter(rating => rating.recipient.id === recipient).length + 1))
-      : newTrustRate = Math.round(100 * ratings.filter(rating => (rating.fulfilled === 'True') && (rating.recipient.id === recipient)).length / (ratings.filter(rating => rating.recipient.id === recipient).length + 1))
-
-    dispatch(addNewRating(ratingObject, newTrustRate))
+    dispatch(addNewOrder(orderObject))
     setContent('')
     dispatch(showModal())
   }
 
-  if (!deal) {
+  if (!item) {
     return null
   }
   return (
@@ -120,7 +113,7 @@ const RatingForm = () => {
       </div>
       <Modal
         action={() => {
-          history.push(`/deals/${id}`)
+          history.push(`/items/${id}`)
           dispatch(hideModal())
         }}
         displayCancelButton='none'
@@ -139,4 +132,4 @@ const RatingForm = () => {
   )
 }
 
-export default RatingForm
+export default OrderForm

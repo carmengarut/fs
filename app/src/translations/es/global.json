@@ -1,22 +1,22 @@
 {
     "header_web": {
-        "brand_name": "eTrust",
+        "brand_name": "Kampei",
         "sign_up": "Regístrate",
         "sign_in": "Iniciar Sesión",
         "es": "Español",
         "en": "English"
     },
-    "landing_page": {
-        "h1": "Construye acuerdos fiables",
-        "h2": "Asegura la fiabilidad de la otra parte y consigue que tus contratos se cumplan.",
-        "button_1": "Saber Más",
-        "button_2": "Empieza Ahora",
-        "box_1_title": "Entiende la fiabilidad de la otra parte",
-        "box_1_content":"Busca el perfil de otras personas para comprobar su porcentaje de fiabilidad. Lo calculamos en base al porcentaje de acuerdos cumplidos.",
-        "box_2_title": "Aseguramos la inmutabilidad a través de la tecnología blockchain",
-        "box_2_content": "Una vez firmado por ambas partes, el acuerdo es encriptado y almacenado en el blockchain, asegurando su inmutabilidad.",
-        "box_3_title": "Haz que tus contratos se cumplan",
-        "box_3_content": "Evaluarás el cumplimiento del contrato por la otra parte cuando este haya terminado. Tu feedback será público, asegurando buena conducta."
+    "landing_page":  {
+        "h1": "Aumenta el consumo de tus clientes",
+        "h2": "Ayudamos a los dueños de los bares a aumentar sus beneficios permitiendo a los clientes pedir y pagar sin necesidad de un camarero.",
+        "button_1": "¿Cómo lo hacemos?",
+        "button_2": "Empezar Ahora",
+        "box_1_title": "Reduce el tiempo que un cliente ocupa una mesa",
+        "box_1_content":"Tus clientes cosumirán más rapido al reducir el tiempo de espera para pedir, servir y pagar la cuenta. Tendrás más clientes por día.",
+        "box_2_title": "Aumenta el consumo por persona",
+        "box_2_content": "Tus clientes no tendrán que esperar al camarero para pedir y entregar las consumiciones. Esto resultará en un aumento del consumo por cliente.",
+        "box_3_title": "Deja que el mundo sepa donde estás",
+        "box_3_content": "Potentiales clientes sabrán cuando estás abierto, qué tipo de música pones, y podrán hacer reservados online."
     },
     "footer": {
         "contact_details": "Contacto +34 617 99 85 94"
