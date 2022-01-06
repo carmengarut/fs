@@ -31,7 +31,7 @@ businessesRouter.post('/', async (request, response) => {
         name,
         passwordHash,
         profileImg,
-        status: 'inactive',
+        status: 'active',
         creationDate: new Date().toISOString()
       })
 

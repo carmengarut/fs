@@ -11,16 +11,26 @@ import HeaderWeb from './components/HeaderWeb'
 import { itemInit } from './reducers/itemReducer'
 import { orderInit } from './reducers/orderReducer'
 import { usersInit } from './reducers/usersReducers'
+import BusinessLoginForm from './components/BusinessLoginForm'
+import BusinessRegistrationForm from './components/BusinessRegistrationForm'
+import { businessSet } from './reducers/businessReducer'
 
 const App = () => {
   const dispatch = useDispatch()
   const user = useSelector(state => state.user)
+  const business = useSelector(state => state.user)
 
   useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser')
+    const loggedUserJSON = window.localStorage.getItem('loggedUser')
+    const loggedBusinessJSON = window.localStorage.getItem('loggedBusiness')
     if (loggedUserJSON) {
       const userToSet = JSON.parse(loggedUserJSON)
       dispatch(userSet(userToSet))
+    }
+
+    if (loggedBusinessJSON) {
+      const businessToSet = JSON.parse(loggedBusinessJSON)
+      dispatch(businessSet(businessToSet))
     }
 
     dispatch(itemInit())
@@ -30,7 +40,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      {user.email
+      {(user.email || business.email)
         ? (
           <>
             <Header />
@@ -46,7 +56,7 @@ const App = () => {
               </Route>
 
               <Route path='/login-business'>
-                <LoginForm />
+                <BusinessLoginForm />
               </Route>
 
               <Route path='/register'>
@@ -54,7 +64,11 @@ const App = () => {
               </Route>
 
               <Route path='/register-business'>
-                <RegistrationForm />
+                <BusinessRegistrationForm />
+              </Route>
+
+              <Route path='/business'>
+                <LandingPage />
               </Route>
 
               <Route path='/'>
